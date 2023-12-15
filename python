@@ -1,0 +1,10 @@
+from flask import Flask, render_template, request, redirect, url_for
+from flask_uploads import UploadSet, configure_uploads, IMAGES
+from PIL import Image
+
+app = Flask(_name_)
+
+photos = UploadSet('photos', IMAGES)
+
+app.config['UPLOADED_PHOTOS_DEST'] = 'static/img'
+configure_uploads(app, photos)
